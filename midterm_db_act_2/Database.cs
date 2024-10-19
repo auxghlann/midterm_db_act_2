@@ -231,5 +231,46 @@ namespace midterm_db_act_2
             //return rowsAffected;
         }
 
+        public int update_employee(int id, string name, string email, string address)
+        {
+
+            string query = "UPDATE employee SET name=?, email=?, address=? WHERE empid=?";
+            int rows_affected = 0;
+            OpenConnection();
+
+            using (command = new OleDbCommand(query, this.Connection))
+            {
+                command.Parameters.AddWithValue("?", name);
+                command.Parameters.AddWithValue("?", email);
+                command.Parameters.AddWithValue("?", address);
+                command.Parameters.AddWithValue("?", id);
+
+                rows_affected = command.ExecuteNonQuery();
+            }
+
+            CloseConnection();
+
+            return rows_affected;
+
+        }
+   
+        public int delete_employee(string name, string email)
+        {
+            string query = "DELETE from employee WHERE name=? and email=?";
+            int rows_affected = 0;
+            OpenConnection();
+
+            using (command = new OleDbCommand(query, this.Connection))
+            {
+                command.Parameters.AddWithValue("?", name);
+                command.Parameters.AddWithValue("?", email);
+
+                rows_affected = command.ExecuteNonQuery();
+            }
+
+            CloseConnection();
+            return rows_affected;
+
+        }
     }
 }
