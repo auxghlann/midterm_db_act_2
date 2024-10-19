@@ -44,6 +44,7 @@
             this.txtKeyword.Name = "txtKeyword";
             this.txtKeyword.Size = new System.Drawing.Size(137, 20);
             this.txtKeyword.TabIndex = 0;
+            this.txtKeyword.TextChanged += new System.EventHandler(this.txtKeyword_TextChanged);
             // 
             // cboSex
             // 
@@ -53,6 +54,7 @@
             this.cboSex.Name = "cboSex";
             this.cboSex.Size = new System.Drawing.Size(110, 21);
             this.cboSex.TabIndex = 1;
+            this.cboSex.SelectedIndexChanged += new System.EventHandler(this.cboSex_SelectedIndexChanged);
             // 
             // btnSearch
             // 
@@ -72,6 +74,7 @@
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 

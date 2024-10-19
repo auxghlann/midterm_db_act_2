@@ -60,5 +60,41 @@ namespace midterm_db_act_2
 
             _db.search_by_keyword(txtKeyword.Text, cboSex.Text, grdData);
         }
+
+        private void cboSex_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sex = cboSex.Text;
+
+            if (cboSex.SelectedIndex !=  -1)
+            {
+                if (sex.Equals("All"))
+                {
+                    _db.search_by_all(grdData);
+                }
+                else
+                {
+                    _db.search_by_sex(sex, grdData);
+                }
+            }
+
+           
+
+        }
+
+        private void txtKeyword_TextChanged(object sender, EventArgs e)
+        {
+            _db.search_by_text_changed(txtKeyword.Text, cboSex.Text, grdData);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmAdd frmAdd = new frmAdd(_db);
+            DialogResult res = frmAdd.ShowDialog();
+            //this.Hide();
+            //if (res == DialogResult.)
+            //{
+            //    this.Show();
+            //}
+        }
     }
 }
