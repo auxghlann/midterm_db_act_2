@@ -1,6 +1,6 @@
 ﻿namespace midterm_db_act_2
 {
-    partial class frnAdd
+    partial class frmAdd
     {
         /// <summary>
         /// Required designer variable.
@@ -105,6 +105,7 @@
             this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAdd
             // 
@@ -114,6 +115,7 @@
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cboAddSex
             // 
@@ -123,7 +125,7 @@
             this.cboAddSex.Size = new System.Drawing.Size(231, 21);
             this.cboAddSex.TabIndex = 10;
             // 
-            // frnAdd
+            // frmAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -140,9 +142,10 @@
             this.Controls.Add(this.txtAddName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "frnAdd";
+            this.Name = "frmAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Record";
+            this.Load += new System.EventHandler(this.frmAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
