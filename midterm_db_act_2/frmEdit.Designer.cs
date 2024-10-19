@@ -45,9 +45,10 @@
             this.btnSave.Location = new System.Drawing.Point(110, 298);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 36);
-            this.btnSave.TabIndex = 19;
+            this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -57,6 +58,7 @@
             this.btnCancel.TabIndex = 18;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label4
             // 
@@ -90,7 +92,7 @@
             this.txtUpdateAddress.Location = new System.Drawing.Point(44, 259);
             this.txtUpdateAddress.Name = "txtUpdateAddress";
             this.txtUpdateAddress.Size = new System.Drawing.Size(231, 20);
-            this.txtUpdateAddress.TabIndex = 13;
+            this.txtUpdateAddress.TabIndex = 14;
             // 
             // txtUpdateName
             // 
@@ -120,7 +122,7 @@
             this.txtUpdateEmail.Location = new System.Drawing.Point(46, 192);
             this.txtUpdateEmail.Name = "txtUpdateEmail";
             this.txtUpdateEmail.Size = new System.Drawing.Size(231, 20);
-            this.txtUpdateEmail.TabIndex = 20;
+            this.txtUpdateEmail.TabIndex = 13;
             // 
             // frmEdit
             // 
@@ -141,7 +143,8 @@
             this.MaximizeBox = false;
             this.Name = "frmEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEdit";
+            this.Text = "Edit Record";
+            this.Load += new System.EventHandler(this.frmEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
