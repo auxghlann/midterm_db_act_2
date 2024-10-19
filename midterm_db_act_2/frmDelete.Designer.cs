@@ -73,18 +73,20 @@
             this.btnDelete.Location = new System.Drawing.Point(109, 166);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 36);
-            this.btnDelete.TabIndex = 21;
+            this.btnDelete.TabIndex = 20;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(199, 166);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 36);
-            this.btnCancel.TabIndex = 20;
+            this.btnCancel.TabIndex = 21;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmDelete
             // 
@@ -97,8 +99,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDelEmail);
             this.Controls.Add(this.txtDelName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "frmDelete";
-            this.Text = "frmDelete";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Delete Record";
+            this.Load += new System.EventHandler(this.frmDelete_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
