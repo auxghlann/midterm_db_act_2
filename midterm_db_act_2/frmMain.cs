@@ -13,9 +13,12 @@ namespace midterm_db_act_2
 {
     public partial class frmMain : Form
     {
-
+        //  Class attr
         private Database _db;
         private string username;
+        
+        private string selected_id, selected_name, selected_email, selected_address;
+
         public frmMain(string username, Database db)
         {
             InitializeComponent();
@@ -86,6 +89,20 @@ namespace midterm_db_act_2
             _db.search_by_text_changed(txtKeyword.Text, cboSex.Text, grdData);
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            frmDelete frmDelete = new frmDelete(this.selected_name, this.selected_email, _db);
+            frmDelete.ShowDialog();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            frmEdit frmEdit = new frmEdit(this.selected_id, this.selected_name, this.selected_email,
+                this.selected_address, this._db);
+
+            frmEdit.ShowDialog();
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmAdd frmAdd = new frmAdd(_db);
@@ -95,6 +112,21 @@ namespace midterm_db_act_2
             //{
             //    this.Show();
             //}
+        }
+
+        private void grdData_SelectionChanged(object sender, EventArgs e)
+        {
+
+            if (grdData.SelectedRows.Count > 0)
+            {
+                var selected_row = grdData.SelectedRows[0].DataBoundItem as DataRowView;
+
+                this.selected_id = selected_row["empid"].ToString();
+                this.selected_name = selected_row["name"].ToString();
+                this.selected_email = selected_row["email"].ToString();
+                this.selected_address = selected_row["address"].ToString();
+            }
+
         }
     }
 }
