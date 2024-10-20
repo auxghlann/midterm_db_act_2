@@ -110,16 +110,17 @@ namespace midterm_db_act_2
             }
         }
   
-        public void search_by_sex(string sex, DataGridView grdData)
+        public void search_by_sex(string keyword, string sex, DataGridView grdData)
         {
 
-            string query = "SELECT * from employee WHERE sex=?";
+            string query = "SELECT * from employee WHERE name like ? and sex=?";
 
             OpenConnection();
 
             using (command = new OleDbCommand(query, this.Connection))
             {
 
+                command.Parameters.AddWithValue("?", keyword + "%");
                 command.Parameters.AddWithValue("?", sex);
                 using (adapter = new OleDbDataAdapter(command))
                 {

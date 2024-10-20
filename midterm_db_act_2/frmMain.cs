@@ -76,7 +76,7 @@ namespace midterm_db_act_2
                 }
                 else
                 {
-                    _db.search_by_sex(sex, grdData);
+                    _db.search_by_sex(txtKeyword.Text, sex, grdData);
                 }
             }
 
